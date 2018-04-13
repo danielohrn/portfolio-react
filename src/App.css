@@ -1,0 +1,16 @@
+.App section {
+    width: 100vw; 
+    height: 100vh;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.App h1, p {
+    margin: .5em 0; 
+}
+
+.hl {
+    background: #5fc35f; 
+    padding: .2em; 
+}
