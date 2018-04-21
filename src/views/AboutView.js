@@ -1,13 +1,15 @@
 import React, { Component } from 'react'; 
-import { Link } from 'react-router-dom'; 
+
+import LinkButton from '../components/LinkButton'; 
+import PageArrow from '../components/PageArrow'; 
+import Card from '../components/Card'; 
 
 export default class AboutView extends Component {
     render(){
         return (
-            <div>
+            <div className="flex-container col jc-center al-center">
                 <h1>About</h1>
-                <Link to='/contact'>Contact</Link>
-                <Link to='/'>Home</Link>
+                <PageArrow to={'/contact'}/>
             </div>
         )
     }

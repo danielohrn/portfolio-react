@@ -1,21 +1,25 @@
 import React, { Component } from 'react'; 
 import { Link } from 'react-router-dom'; 
+import Overdrive from 'react-overdrive'; 
 
 import Card from '../components/Card'; 
 import LinkButton from '../components/LinkButton'; 
+import PageArrow from '../components/PageArrow'; 
 
 import { colors } from '../constants'; 
+
+import '../App.css';
 
 
 export default class StartView extends Component {
 
     state = {
-        skills: ['JavaScript', 'React', 'CSS', 'HTML'],
+        skills: ['JavaScript', 'HTML5', 'CSS', 'React', 'Node', 'Express', 'Socket.io', 'Wordpress','Sass'],
         activeSkill: {name: null, index: -1}
     }
 
     handleSkillsToggle = () => {
-        this.intervalTime = 800; 
+        this.intervalTime = 1200; 
         this.skillsInterval = setInterval(() => {
             this.toggleSkills(); 
         },this.intervalTime); 
@@ -44,22 +48,35 @@ export default class StartView extends Component {
 
     render(){
         return (
-            <section style={styles.section}>
+            <section className="flex-container col jc-center al-center" style={styles.section}>
+                    {/* <Card>
+                        <h1>Hey, im <span>Daniel.</span></h1>
+                        <p>
+                            I'm a frontend developer student with skills in 
+                            <span style={{display: 'inline-block', width: 100, marginLeft: '.1em'}}> { this.state.activeSkill.name}.</span>
+                        </p>
+                        
+                        <LinkButton caption={'Checkout my skills'} to={'/skills'}/>
+                    </Card>
 
-                <Card backgroundColor="rgba(0, 0, 0, 0.078)" 
-                      color="white">
-
-                    <h1>Hey, im <span className="hl">Daniel.</span></h1>
+                    */}
+                
+                <div style={{textAlign: 'center'}}>
                     
-                    <p>I'm a frontend developer student with skills in <span className="hl"> {this.state.activeSkill.name}.</span></p>
-                    
-                    <LinkButton 
-                        to={'/skills'}
-                        color="white"
-                        borderColor="green"
-                    />
+                    <Overdrive id="eagle" duration={500}>
+                        <img src="./img/eagle.png" style={{width: 100}}/>
+                    </Overdrive>
 
-                </Card>
+                    <h1 style={{textTransform: 'uppercase', fontSize: '3em', color: '#dedede'}}>
+                        Daniel Öhrn Hasslöf
+                    </h1>
+                
+                    <p>
+                        Frontend developer | Stockholm 
+                        {/* <span style={{display: 'inline-block'}}> {this.state.activeSkill.name}.</span> */}
+                    </p>
+                    <PageArrow to={'/skills'} name={'Skills'}/>
+                </div>
             </section>
         )
     }
@@ -68,6 +85,7 @@ export default class StartView extends Component {
 
 const styles = {
     section: {
-        background: '#262934', 
+        background: colors.blackish, 
+        color: 'white'
     }
 }

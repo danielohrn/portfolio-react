@@ -8,8 +8,9 @@ import { 
 
 import './App.css';
 import routes from './routes'; 
-import Toggler from './components/Toggler'; 
+import PageArrow from './components/PageArrow'; 
 import MainNav from './components/MainNav'; 
+import Eagle from './components/Eagle'; 
 
 class App extends Component {
 
@@ -21,16 +22,18 @@ class App extends Component {
              key={route.name}
       />
     ))
+
     return (
       <div className="App">
-        <MainNav/>
         <main>
           {pageRoutes}
-          {/* <Toggler/> */}
+          <Route path='/' component={Eagle}/>
         </main>
       </div>
     );
   }
 }
+
+
 
 export default App;
