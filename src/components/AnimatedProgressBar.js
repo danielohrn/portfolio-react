@@ -42,26 +42,18 @@ export default class AnimatedProgressBar extends Component {
         const {background} = this.props; 
         
         return (
-            // <progress 
-            //     value={currentValue} 
-            //     max={100}
-            //     style={{
-            //         ...styles, 
-            //         background
-            //     }}
-            // />
-
-            <div style={{...styles, width: `${currentValue}%`}}/>
-        )
+            <div style={{
+                ...styles, 
+                width: `${currentValue}%`
+            }}/>
+        ); 
     }
 }
 
 const styles = {
-    //transition: '.5s ease all',
     position: 'absolute', 
     left: 0, 
     top: 0, 
-    //opacity: .5,
     width: '100%', 
     height: '100%', 
     background: '#dedede'

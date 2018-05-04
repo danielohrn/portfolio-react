@@ -11,6 +11,7 @@ import routes from './routes';
 import PageArrow from './components/PageArrow'; 
 import MainNav from './components/MainNav'; 
 import Eagle from './components/Eagle'; 
+import Canvas from './components/Canvas'; 
 
 class App extends Component {
 
@@ -28,7 +29,9 @@ class App extends Component {
         <main>
           {pageRoutes}
           <Route path='/' component={Eagle}/>
+          {/* <MainNav/> */}
         </main>
+        <Canvas/>
       </div>
     );
   }

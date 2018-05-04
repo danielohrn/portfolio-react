@@ -28,11 +28,11 @@ export default class Eagle extends Component {
     render(){
       const {pos} = this.state;
       const {pathname} = this.props.location;  
-      const root = '/'; 
+      const ROOT = '/'; 
       return (
         <span>
           
-          {pathname != root ? 
+          {pathname != ROOT ? 
           
           <Overdrive id="eagle" duration={500}>
             <img 
@@ -43,9 +43,7 @@ export default class Eagle extends Component {
             />  
           </Overdrive>
 
-          :
-
-          null}
+          : null}
 
         </span>
       ); 

@@ -1,6 +1,5 @@
 import React from 'react'; 
 
-
 const Card = ({children, backgroundColor, color, width}) => (
     <div style={{
             ...styles.card, 

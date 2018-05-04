@@ -5,7 +5,7 @@ const PageArrow = ({direction, to = '/', name}) => {
     
     return (
         <Link to={to} style={styles.arrow} className={direction === 'back' ? 'arrow-back' : null}>
-            <svg   
+            <svg
                 xmlns="http://www.w3.org/2000/svg" 
                 width="24" 
                 height="24" 
@@ -20,7 +20,8 @@ const styles = {
     arrow: {
         position: 'fixed', 
         bottom: '50%', 
-        right: '20px'
+        right: '20px',
+        fill: 'white'
     }
 }; 
 

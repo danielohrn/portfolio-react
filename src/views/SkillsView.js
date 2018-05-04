@@ -6,6 +6,7 @@ import SkillCard from '../components/SkillCard';
 import LinkButton from '../components/LinkButton';
 import { colors } from '../constants';  
 import PageArrow from '../components/PageArrow';
+import PageHeader from '../components/PageHeader'; 
 
 import '../App.css'; 
 
@@ -63,10 +64,9 @@ export default class SkillsView extends Component {
             other
         } = this.state.skills;
         return (
-            <section className="flex-container col al-center jc-center" style={{background: colors.grayish}}>
+            <section className="flex-container col al-center jc-center" >
                 
-                <h1 style={{position: 'fixed', top: '20px'}}>Skills</h1>
-
+                <PageHeader text={'Skills'}/>
                 
                 <div className="flex-container row wrap jc-center">
                     

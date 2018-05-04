@@ -48,19 +48,7 @@ export default class StartView extends Component {
 
     render(){
         return (
-            <section className="flex-container col jc-center al-center" style={styles.section}>
-                    {/* <Card>
-                        <h1>Hey, im <span>Daniel.</span></h1>
-                        <p>
-                            I'm a frontend developer student with skills in 
-                            <span style={{display: 'inline-block', width: 100, marginLeft: '.1em'}}> { this.state.activeSkill.name}.</span>
-                        </p>
-                        
-                        <LinkButton caption={'Checkout my skills'} to={'/skills'}/>
-                    </Card>
-
-                    */}
-                
+            <section className="flex-container col jc-center al-center" style={styles.section}>                
                 <div style={{textAlign: 'center'}}>
                     
                     <Overdrive id="eagle" duration={500}>
@@ -73,7 +61,6 @@ export default class StartView extends Component {
                 
                     <p>
                         Frontend developer | Stockholm 
-                        {/* <span style={{display: 'inline-block'}}> {this.state.activeSkill.name}.</span> */}
                     </p>
                     <PageArrow to={'/skills'} name={'Skills'}/>
                 </div>
@@ -85,7 +72,6 @@ export default class StartView extends Component {
 
 const styles = {
     section: {
-        background: colors.blackish, 
         color: 'white'
     }
 }
