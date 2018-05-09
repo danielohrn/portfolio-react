@@ -1,55 +1,46 @@
 import React, { Component } from 'react';
 
 import PageArrow from '../components/PageArrow'; 
-import PageHeader from '../components/PageHeader'; 
+import PageHeader from '../components/PageHeader';
 import Card from '../components/Card'; 
+import LinkedInIcon from '../components/SVG/LinkedIn'; 
+import EmailIcon from '../components/SVG/EmailIcon'; 
 
-import {colors} from '../constants'; 
+
+import '../App.css'; 
 
 export default class ContactView extends Component {
+
+    state = {
+        messageSent: false 
+    }
+
     render(){
         return (
             <section className="flex-container col jc-center al-center">
                 <PageHeader text={'Contact'}/>
-                <form className="flex-container col jc-center" style={styles.form}>
-                    <div>
-                        <input style={styles.input} type="text" id="name" placeholder="Name"/>
-                        <input style={styles.input} type="text" id="email" placeholder="Email"/>
-                    </div>
-                    <textarea id="message" cols="30" rows="10" placeholder="Message"></textarea>
-                    <button style={styles.button} type="submit">
-                        Send
-                    </button>
-                </form>
+
+                <Card width={'80%'} backgroundColor={'white'}>
+                    <ul className="">
+                        <li style={{display: 'flex', alignItems: 'center', margin: '.5em 0'}}>
+                            <EmailIcon/>
+                            <span style={{paddingLeft: '.5em'}}>dhasslof@gmail.com</span>
+                        </li>
+                        <li style={{display: 'flex', alignItems: 'center', margin: '.5em 0'}}>
+                                <LinkedInIcon/>
+                                <span style={{paddingLeft: '.5em'}}>
+                                    <a target="_blank" 
+                                       href="https://www.linkedin.com/in/daniel-%C3%B6hrn-hassl%C3%B6f-a3b1a8a1/">
+                                        LinkedIn
+                                    </a>
+                                </span>
+                        </li>
+                    </ul>
+                </Card>
+
                 <PageArrow to={'/'}/>
             </section>
         )
     }
 }
 
-
-const styles = {
-    form: {
-        width: '50%', 
-        padding: '1em', 
-        fontSize: '1.2em'
-    }, 
-    label: {
-        margin: '.5em 0',
-        padding: '.3em',  
-        background: colors.blackish, 
-        color: 'white'
-    }, 
-    input: {
-        padding: '.5em', 
-        fontSize: '1em', 
-        width: '50%', 
-        boxSizing: 'border-box', 
-        margin: '.5em 0'
-    }, 
-    button: {
-        margin: '.5em 0',
-        padding: '1em', 
-        width: '50%'
-    }
-}

@@ -17,7 +17,7 @@ const styles = {
         padding: '1em',
         margin: '.3em'
     }
-}
+}; 
 
 
 export default Card; 

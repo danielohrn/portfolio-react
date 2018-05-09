@@ -1,6 +1,5 @@
 import React, { Component } from 'react'; 
 
-import LinkButton from '../components/LinkButton'; 
 import PageArrow from '../components/PageArrow'; 
 import Card from '../components/Card'; 
 import PageHeader from '../components/PageHeader';
@@ -13,7 +12,8 @@ export default class AboutView extends Component {
                 <PageHeader text={'About'}/>
                 
                 <PageArrow to={'/contact'}/>
-                    <Card width="50%" backgroundColor="white">
+                    
+                    <Card width={'80%'} backgroundColor={'white'}>
                         <h2 style={styles.headers}>
                             Personal
                         </h2>
@@ -24,13 +24,6 @@ export default class AboutView extends Component {
                             <li>
                                 Age: {date.getFullYear() - 1992}
                             </li>
-                            <li>
-                                Get in touch: 
-                                    <ul>
-                                        <li>Email</li>
-                                        <li>LinkedIn</li>
-                                    </ul>
-                            </li>
                         </ul>
 
                         <h3 style={styles.headers}>
@@ -39,8 +32,8 @@ export default class AboutView extends Component {
                         <p>
                             My goal is to get hired as soon as possible in the industry and to continue to learn about software and web-development along the way.
                         </p>
-                    </Card>
-                    <Card width="50%" backgroundColor="white">
+                    
+                    
                         <h2 style={styles.headers}>
                             Education
                         </h2>
@@ -55,6 +48,7 @@ export default class AboutView extends Component {
                             I will be doing work experience, or "LIA" (learning while working) in the fall of 2018.
                         </p>
                     </Card>
+                    
             </section>
         )
     }

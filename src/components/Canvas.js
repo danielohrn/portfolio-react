@@ -14,6 +14,7 @@ export default class Canvas extends Component {
         window.addEventListener('click', this.spawnShapes); 
         window.addEventListener('resize', this.fullScreen); 
 
+
         this.fullScreen(); 
         this.drawingContext = this.canvasElement.getContext('2d'); 
         this.drawCanvas(); 
@@ -89,5 +90,4 @@ const styles = {
     top: 0, 
     left: 0,
     zIndex: '-999', 
-    // opacity: .8
-}
+}; 

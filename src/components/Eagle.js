@@ -32,11 +32,12 @@ export default class Eagle extends Component {
       return (
         <span>
           
-          {pathname != ROOT ? 
+          {pathname !== ROOT ? 
           
           <Overdrive id="eagle" duration={500}>
             <img 
               src={'./img/eagle.png'} 
+              alt="eagle"
               style={{...styles.eagle, left: `${pos}px`}}
               onMouseOver={this.birdHunt}
               onClick={this.birdHunt}

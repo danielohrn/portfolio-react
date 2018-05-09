@@ -1,7 +1,5 @@
 import React, { Component } from 'react'; 
 
-import {colors} from '../constants'; 
-
 export default class AnimatedProgressBar extends Component {
     
     state = {
@@ -29,8 +27,8 @@ export default class AnimatedProgressBar extends Component {
     }
 
     tick = () => {
-        const currentValue = this.state.currentValue += 1; 
-        this.setState({currentValue}); 
+        const currentValue = this.state.currentValue; 
+        this.setState({currentValue: currentValue + 1}); 
 
         if(currentValue >= this.state.targetValue) {
             clearInterval(this.tickInterval); 
@@ -38,8 +36,7 @@ export default class AnimatedProgressBar extends Component {
     }
 
     render(){
-        const {currentValue, targetValue} = this.state;
-        const {background} = this.props; 
+        const {currentValue} = this.state;
         
         return (
             <div style={{
@@ -57,4 +54,4 @@ const styles = {
     width: '100%', 
     height: '100%', 
     background: '#dedede'
-}
+}; 

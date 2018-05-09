@@ -5,15 +5,18 @@ import AnimatedProgressBar from '../components/AnimatedProgressBar';
 
 const SkillCard = ({skills, skillName, h1Background, h1Color, addOns}) => {
     let addOnsList; 
+    let skillList; 
 
-    const skillList = skills.map((skill, i) => (
-        <Skill key={i}
-               name={skill.name} 
-               rating={skill.rating} 
-               background={'black'}
-               image={skill.image}
-        />
-    ));
+    if(skills) {
+        skillList = skills.map((skill, i) => (
+            <Skill key={i}
+                   name={skill.name} 
+                   rating={skill.rating} 
+                   background={'black'}
+                   image={skill.icon_url}
+            />
+        ));
+    }
 
     if(addOns) {
         addOnsList = addOns.map((addOn, i) => (
@@ -21,7 +24,7 @@ const SkillCard = ({skills, skillName, h1Background, h1Color, addOns}) => {
                    name={addOn.name} 
                    rating={addOn.rating} 
                    background={'black'}
-                   image={addOn.image}
+                   image={addOn.icon_url}
             />
         )); 
     }
@@ -48,7 +51,7 @@ const Skill = ({name, rating, background, image}) => (
     <li style={{position: 'relative', margin: '.3em 0', height: '30px', padding: '.1em'}}>   
         
         <div style={{zIndex: '10', width: '100%', justifyContent: 'space-between', display: 'flex', alignItems: 'center', position: 'relative', height: '100%'}}>
-            <img src={image} style={{width: '30px'}}/>
+            <img src={image} alt={name} style={{width: '30px'}}/>
             <span>{name}</span>
             <span>{rating}%</span>
         </div>
@@ -57,7 +60,7 @@ const Skill = ({name, rating, background, image}) => (
                 startValue={0}
                 updateFrequency={20}
                 targetValue={rating}
-                background={background}/>
+        />
     </li>
 )
 

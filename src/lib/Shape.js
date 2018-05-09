@@ -1,6 +1,6 @@
 const COLORS = [
     'white', 
-    'green'
+    '#41b883'
 ]; 
 
 const getRandomColor = () => COLORS[Math.floor(Math.random() * COLORS.length)]; 
